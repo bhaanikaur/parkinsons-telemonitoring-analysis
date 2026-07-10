@@ -28,7 +28,7 @@ I computed each patient's **progression velocity**. This is the rate their total
 | ... | | | | |
 | 28 | 41.58 | 25.77 | -0.0941 | routine monitoring |
 
-*(Full output: `finding1_triage.png`)*
+![Triage output showing flagged patients](finding1_triage.png)
 
 **Product takeaway:** This velocity metric is the logic layer behind a triage alert. Rather than a clinician manually reviewing all 42 patients, the product surfaces the ~half of the panel pulling away from the norm, turning limited clinical attention toward the patients who need it most.
 
@@ -40,7 +40,7 @@ I computed the true least-squares **regression slope** across all ~200 recording
 
 **The two methods agree to within ~0.002 for nearly every patient, and produce an identical ranking.** The endpoint method is a valid proxy on this dataset, so I kept it for readability while documenting the more rigorous alternative.
 
-*(Comparison output: `finding1_validation.png`)*
+![Endpoint vs regression slope comparison](finding1_validation.png)
 
 ---
 
@@ -60,7 +60,7 @@ I computed the Pearson correlation between each voice measure and total UPDRS se
 | Jitter(%) | 0.0742 |
 | NHR | 0.0610 |
 
-*(Full output: `finding2_correlations.png`)*
+![Voice measure correlations](finding2_correlations.png)
 
 **Product takeaway: do not ship voice as a standalone severity estimate.** No single voice measure is strong enough to drive a clinical severity readout on its own. If voice is used, it should be one input among several, or paired with the longitudinal trend rather than a point-in-time snapshot.
 
